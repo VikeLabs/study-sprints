@@ -3803,7 +3803,7 @@ fieldset:disabled .btn {
 
 .btn-check:focus+.btn-outline-danger,
 .btn-outline-danger:focus {
-    box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .5)
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, 0.0)
 }
 
 .btn-check:active+.btn-outline-danger,
@@ -3821,7 +3821,7 @@ fieldset:disabled .btn {
 .btn-outline-danger.active:focus,
 .btn-outline-danger.dropdown-toggle.show:focus,
 .btn-outline-danger:active:focus {
-    box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .5)
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, 0.0)
 }
 
 .btn-outline-danger.disabled,
@@ -3843,7 +3843,7 @@ fieldset:disabled .btn {
 
 .btn-check:focus+.btn-outline-light,
 .btn-outline-light:focus {
-    box-shadow: 0 0 0 .25rem rgba(248, 249, 250, .5)
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, 0.0)
 }
 
 .btn-check:active+.btn-outline-light,
