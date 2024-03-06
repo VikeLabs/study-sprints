@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "StudySprints",
+  "description": "Pomodoro timer to help with productivity",
+  "version": "1.0",
+  "action": {
+    "default_popup": "timer.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "alarm.mp4"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
