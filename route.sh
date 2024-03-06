@@ -1,7 +1,6 @@
 #!/bin/bash
 # git workflow v8.0
 # 2024 @arfazhxss
-# Test Version #31
 
 breakStrSize=50
 breakStrIter=$(printf '_%.0s' $(seq 1 "$breakStrSize"))
@@ -35,8 +34,19 @@ function pushChanges() {
     return
   fi
 
+  mostRecentCommitLog=$(git log -1)
+  gitCommitInf=$(echo "$mostRecentCommitLog" | grep 'Author:' | cut -d ' ' -f2 | sed 's/[^<]*<\([^>]*\).*/\1/')
+
+  if [ "$gitCommitInf" == "Arfaz" ]; then
+    gitCommitInf="Commit by @arfazhxss"
+  elif [ -z "$gitCommitInf" ]; then
+    gitCommitInf=""
+  else
+    gitCommitInf="Commit by "$gitCommitInf
+  fi
+
   git add . && git add -u && \
-  git commit -m "$CommitMessage"$'\nCommit by @arfazhxss on '"$(date +'%a %d %b %Y')" && \
+  git commit -m "$CommitMessage"$'\n'"$gitCommitInf"' on '"$(date +'%a %d %b %Y')" && \
   if git push --set-upstream origin "$branch" --quiet; then
     rm -Rf .DS_Store/
     echo -e "${breakStrIter}\n\t\tYour changes have been pushed\n\t\tto the repository :)\n${breakStrIter}"
